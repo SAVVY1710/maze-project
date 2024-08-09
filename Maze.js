@@ -2,10 +2,10 @@
 First time? Check out the tutorial game:
 https://sprig.hackclub.com/gallery/getting_started
 
-@title: Maze
-@author: 
+@title: maze
+@author: Sai Avula
 @tags: []
-@addedOn: 2024-00-00
+@addedOn: 2024-08-06
 */
 
 const player = "p"
@@ -38,6 +38,7 @@ const green = "]"
 let difficulty = 1
 let startmap = 0
 let leveltoplay = 4
+
 
 setLegend(
   [player, bitmap`
@@ -482,16 +483,82 @@ setLegend(
 4444444444444444
 4444444444444444
 4444444444444444`]
-  
 )
 
-setSolids([])
+setSolids([player, black])
 
 let level = 0
 const levels = [
   map`
-p.
-..`
+.................
+.................
+.................
+.................
+.................
+set.difficulty:1.
+.................
+,ress.i.td.start.
+.................
+,ress.l.td.change
+.................
+.................
+.................
+.................
+.................`,
+  map`
+.................
+.................
+.................
+.................
+.................
+set.difficulty:2.
+.................
+,ress.i.td.start.
+.................
+,ress.l.td.change
+.................
+.................
+.................
+.................
+.................`,
+  map`
+.................
+.................
+.................
+.................
+.................
+set.difficulty:3.
+.................
+,ress.i.td.start.
+.................
+,ress.l.td.change
+.................
+.................
+.................
+.................
+.................`,
+  map`
+bbbbbbbbbbbbb......bbb....bbbbbbb
+b.bb.....bbbb.bbbb.bbb.bbbb.....]
+b.bb.bbb.bbbb.bbbb.bbb...bb.bbbbb
+b.bb.bbb....b.bbbb.bbbbb.bb.bbbbb
+b.bb.bbbbbb.b....b.bbbbb.bb.bbbbb
+b.bb.bbbbbb.b.bb.b.bbbbb.bb....bb
+b.bb.bb.bbb.b.bb.b.b.....bbbbb.bb
+b.bb.bb.bbb.b.bb.b.b.bbbbbbbbb.bb
+b....bb.bbb.b.bb.b.b.bbbbbbb...bb
+b.bbbbb.bbb.b.bb.b.b.........bbbb
+b.bbbbb.bbb.b.bb.b.b.bbbbbbbbbbbb
+b...bbb.bbb.b.bbbb.b.bbbbb.......
+bbb.......b.b..b...b.bb....bbbbb.
+bbb.bbbbbbb.bb.b.bbb.b..bbbbbbbb.
+bbb.b.....b....b.bbb...bb.....bb.
+bbb.b.bbb.bbbbbb.bbbbbbbb.bbb.bb.
+bbb.b.bbb....bbb.bbbb.....bbb....
+bbb.b.bbbbbbbbbb.bbbb.bbbbbbbbbbb
+p.....bbbbbbbbbb......bbbbbbbbbbb`,
+  map``,
+  map``
 ]
 
 setMap(levels[level])
@@ -503,6 +570,7 @@ setPushables({
 onInput("s", () => {
   getFirst(player).y += 1
 })
+
 onInput("w", () => {
   getFirst(player).y -= 1
 })
@@ -546,5 +614,12 @@ onInput("l", () => {
 })
 
 afterInput(() => {
-  
+  const targetnum = tilesWith(green).length;
+
+  const covered = tilesWith(green, player).length
+
+  if(targetnum == covered)
+  {
+    setMap(levels[0])
+  }
 })
