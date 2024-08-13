@@ -557,8 +557,61 @@ bbb.b.bbb.bbbbbb.bbbbbbbb.bbb.bb.
 bbb.b.bbb....bbb.bbbb.....bbb....
 bbb.b.bbbbbbbbbb.bbbb.bbbbbbbbbbb
 p.....bbbbbbbbbb......bbbbbbbbbbb`,
-  map``,
-  map``
+  map`
+bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb...
+bbbb.............bbbbbbbbbbbbbbbbbbbbbb.b.
+.....bb.bbbbbbbb..bbbbbb.......b........b.
+bbbbbbb......bbbb........bbb.b.b.bbbbbbbb.
+b...bbb.bbbbbb.bb.bbbbbb.b.b.b.b.bbbbbbb..
+b.b.bbb.bbbbbb.bb.b....b.b.b.b.b.bbbbbbb.b
+b.b.bbb.bbbbbb....b.bb.b.b.b.b.b.bbbb.....
+b.b...b......bbbbbb.bb.b.b.b.b.b.bbbb.bbb.
+b.bbb.bbbbbb.bbb....bb.b.b.b.b.b.bbbb.bbb.
+b...b.bbbbbb.bbb.bbbbb.bbb.b.b.b.bbbb.bbb.
+bbb.b.bbbbbb.bbb.bbbbb.b...b.b.b.bbbb.bbb.
+bbb.b.bbbbbb.bbb.b.....b.bbb.b.b.bbbb...b.
+b...b..........b.b.bbbbb.b...b.b.bbbbbbbb.
+b.bbbbbbbbbbbb.b.b.bb....b.bbb.b.bbbbbbbb.
+b.bbbbbbbbbbbb.b.b.bb.b.bb.bb..b.bbbbbbbb.
+b.bbbbbbbbbbbb.b.b.bb.b.b..bb.bb.bb....b..
+b.bbbbbbb...bb.b.b.bb.b.b.bbb....bb.bb.b.b
+b......bb.bbbb.b.b.bb.b.b.bbbbbbbbb.bb...b
+b.bbbb.bb.bbbb.b.b.bb.b.b.bbb.bbbbb.bbbbbb
+b.bbbb.bb.bbb..b.b.bb.b.b.bbb.bbbbb]bbbbbb
+b.bbbb.bb.bbb.bb.b.bb.b.b.bbb.bbbbbbbbbbbb
+b.bbbb....bbb....b.bb.b.b.bbb.bbbbbbbbbbbb
+bpbbbbbbbbbbbbbbbb....b.b.....bbbbbbbbbbbb`,
+  map`
+bbbbbbbbb.......bb......b............bbbbbbbbbbbbbbbbbbb
+bbbbbbbb..b.bbb.bb.bbbb.b.bbbbbbbbbb.bbbbbbbbb..........
+.........bb.bbb.bb.bbbb.b..bbbbbbbbb.bbbbbbbpbbbbbbbbbb.
+bbbbbbbbbbb.bbb.bb.bbbb.b..bbbbbbbbb.........bbbbbbbbbb.
+bb.......bb.bbb.bb.bbbb.bb.bbb.bbbbb.bbbbbbb.bbbbbbbbbb.
+bb.bbbbb.bb.bbb.bb.bbbb..b.bbb.bbb.b.bbbbbbb.bbbbp......
+bb.bbbbb.bb.bbb.bb.bbbbb.b.bbb.bbb.b.bbbbbbb.bbbbp.bbbbb
+bb.bbbbb.bb.bb..bb.b.....b.bbb:bbb.b..bbbbbb.bbbbb.bbbbb
+bb.bbbbb.bb.b..bbb.b.bbbbb::::.bbb.bb.bbb....bbbbb.bbbbb
+bb.bbbbb....b.bbbb.b.bbbb..bbb.bbb.bb.bbb.bbbbbbbb.bbbbb
+bb.bbbbbbbbbb.bbbb.b.b....bbbb.bbb.bb.bbb..........bbbbb
+bb....b.....b.bbb..b.b.bbbbbbb.bbb.bb.bbbbbbbbbbbbbbbbbb
+bb.bb.b.bbb.b.bb..bb.b.bbbbbbb.bbb.bb.bbbbbbbbbbbbbbbbbb
+...bb.b.b.b.b.bb.bbb.b.bbbbbbb.bbb.bb.bbbbbbbbbbbbbbbbbb
+.bb.b.b.b.b.b.bb.b...b.bbbbbbb.bbb.bb.bbbbbbbbb.....bbbb
+.bb.b.bbb.b.b.bb.b.bbb.bbbbbbb..bb.bb.bbbbbbbbbbbbb....b
+.bb.b.....b.b.bb.b.bb....bbbbbb.bb.bb.bbbbbbbbbbbbbbbb.b
+.bb.bbbbbbb.b.bb.b.bbbbb.bbbbbb.bb.bb.......bbbbbbbbbb.b
+.bb.........b.bb.b..bbbb....bbb.bb.bbbbbbbb........bbb.b
+.bbbbb.bbbbbb.bb.bb.bbbbbbb.bbb.bb.bbbbbbbbbbbbbbb...b.b
+.....b.b......bb..b.bbbbbbb.bbb.bb.bbbbbbbbbbbbbbbbb.b.b
+bb.b.b.b.bbbbbbbb.b....bbbb.bbb.bb.bbbbbbbbbbbbbbbbb.b.b
+bb.b.b.b.bbbbbbbb.b.bb..bbb.bbb.bb.bbbbbbbbbbbbbbbbb.b.b
+bb.b.b.b........b.b.bbb.bbb.bbb.bb..bbbbbbbbbbbbbbbb.b.b
+bbbb.b.bbbbbbbb...b.bbb.bbb.bbb.bbb..bbb...bbbbb.bbb.b.b
+b.............bbbbb.bbb.bbb.bbb.bbbb.bbb.b.bbbbb.bbb.b.b
+b.bbbbbbbbbbb.bbbbb...b..bb.bbb.bpbb.bbb.b.bbbbb.bbb]b.b
+b.bbbbbbbbbbb.....bbb.bb....bbb.bbbb.bbb.b.bbbbb.bbbbb.b
+b.bbbbbbbbbbbbbb....b..bbbbpbbb..........b.bbbbb.......b
+bpbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.......bbbbbbb`
 ]
 
 setMap(levels[level])
@@ -600,11 +653,11 @@ onInput("i", () => {
     clearText("");
     setMap(levels[leveltoplay])
   }
-  
+
 })
 
 onInput("l", () => {
-  startmap++
+  startmap++;
   if(startmap == 3)
   {
     startmap = 0
@@ -618,7 +671,7 @@ afterInput(() => {
 
   const covered = tilesWith(green, player).length
 
-  if(targetnum == covered)
+  if(targetnum == covered && targetnum != 0)
   {
     setMap(levels[0])
   }
